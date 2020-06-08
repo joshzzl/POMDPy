@@ -153,12 +153,22 @@ class TigerModel(model.Model):
             print("ERROR: Tried to generate a step with a null action")
             return None
         elif not isinstance(action, TigerAction):
+            '''
+            if isinstance(action, int):
+                print("Right format:" + str(action))
+            else:
+                print("Wrong format: " + str(action))
+            '''
             action = TigerAction(action)
 
         result = model.StepResult()
         result.is_terminal = self.make_next_state(action)
         result.action = action.copy()
-        result.observation = self.make_observation(action)
+        if not self.k_type: 
+            result.observation = self.make_observation(action)
+        else:
+            result.observation = self.make_decp_observation(action, \
+                self.k_type, self.d_prob)
         result.reward = self.make_reward(action, result.is_terminal)
 
         return result
@@ -168,6 +178,7 @@ class TigerModel(model.Model):
         if action.bin_number == ActionType.LISTEN:
             return False
         else:
+            #print("\nterminal here\n")
             return True
 
     def make_reward(self, action, is_terminal):
@@ -176,18 +187,21 @@ class TigerModel(model.Model):
         :param is_terminal:
         :return: reward
         """
-
+        
         if action.bin_number == ActionType.LISTEN:
+            #print("listen reward: -1; "+ str(ActionType.LISTEN))
             return -1.0
 
         if is_terminal:
+            
             assert action.bin_number > 0
             if action.bin_number == self.tiger_door:
                 ''' You chose the door with the tiger '''
-                # return -20
+                #print("terminal reward: {}, {}, {}".format(action.bin_number, self.tiger_door, -20))
                 return -20.
             else:
                 ''' You chose the door with the prize! '''
+                #print("terminal reward: {}, {}, {}".format(action.bin_number, self.tiger_door, 10))
                 return 10.0
         else:
             print("make_reward - Illegal action was used")
@@ -207,12 +221,41 @@ class TigerModel(model.Model):
             return TigerObservation(None)
         else:
             obs = ([0, 1], [1, 0])[self.tiger_door == 1]
+            #print("Observation: "+str(obs))
             probability_correct = np.random.uniform(0, 1)
             if probability_correct <= 0.85:
                 return TigerObservation(obs)
             else:
                 obs.reverse()
                 return TigerObservation(obs)
+
+    def make_decp_observation(self, action, k_type, prob=None):
+        """
+            called by generate_step
+        """
+        if action.bin_number > 0:
+            return TigerObservation(None)
+        else:
+            obs = ([0, 1], [1, 0])[self.tiger_door == 1]
+            if k_type == "rand":
+                if np.random.uniform(0, 1) < 0.5:
+                    obs.reverse()
+
+            elif k_type == "prob":
+                if not prob:
+                    raise ValueError("Mask prob not available")
+                probability_correct = np.random.uniform(0, 1)
+                if probability_correct > prob:
+                    obs.reverse()
+
+            elif k_type == "oppo":
+                obs.reverse()
+
+            else:
+                raise ValueError("Deceptive mask type not recognizable.")
+            
+            return TigerObservation(obs)
+            
 
     def belief_update(self, old_belief, action, observation):
         """

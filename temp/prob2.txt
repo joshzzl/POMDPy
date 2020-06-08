@@ -1,0 +1,226 @@
+{'beta': 0.001,
+ 'd_prob': 0.75,
+ 'discount': 0.95,
+ 'env': 'Tiger',
+ 'epsilon_decay': 0.99,
+ 'epsilon_decay_step': 75,
+ 'epsilon_minimum': 0.02,
+ 'epsilon_start': 0.2,
+ 'k_type': 'prob',
+ 'learning_rate': 0.05,
+ 'learning_rate_decay': 0.996,
+ 'learning_rate_decay_step': 50,
+ 'learning_rate_minimum': 0.00025,
+ 'max_steps': 50,
+ 'n_epochs': 5000,
+ 'planning_horizon': 5,
+ 'save': True,
+ 'save_name': 'prob2.pkl',
+ 'seed': 1025,
+ 'solver': 'LinearAlphaNet',
+ 'test': 10,
+ 'use_tf': True}
+ [*] Loading checkpoints...
+ [!] Load FAILED: D:\Graduate Assistant\Research code\zhili_pomdpy\POMDPy\pomdpy\pomdp\..\..\experiments\checkpoints
+
+evaluating agent at epoch 0...
+b 0 [0.85 0.15]
+agent - Step Number = 0
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 1
+agent - Step Result.Reward = -1.0
+agent - Step Number = 0
+agent - Step Result.Action = Opening door 2
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 10...
+b 0 [0.15 0.85]
+agent - Step Number = 10
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 2
+agent - Step Result.Reward = -1.0
+agent - Step Number = 10
+agent - Step Result.Action = Opening door 1
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 20...
+b 0 [0.15 0.85]
+agent - Step Number = 20
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 2
+agent - Step Result.Reward = -1.0
+agent - Step Number = 20
+agent - Step Result.Action = Opening door 1
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 30...
+b 0 [0.85 0.15]
+agent - Step Number = 30
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 1
+agent - Step Result.Reward = -1.0
+agent - Step Number = 30
+agent - Step Result.Action = Opening door 2
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 40...
+b 0 [0.85 0.15]
+agent - Step Number = 40
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 1
+agent - Step Result.Reward = -1.0
+agent - Step Number = 40
+agent - Step Result.Action = Opening door 2
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 50...
+b 0 [0.85 0.15]
+agent - Step Number = 50
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 1
+agent - Step Result.Reward = -1.0
+agent - Step Number = 50
+agent - Step Result.Action = Opening door 2
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 60...
+b 0 [0.15 0.85]
+agent - Step Number = 60
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 2
+agent - Step Result.Reward = -1.0
+agent - Step Number = 60
+agent - Step Result.Action = Opening door 1
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 70...
+b 0 [0.85 0.15]
+agent - Step Number = 70
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 1
+agent - Step Result.Reward = -1.0
+agent - Step Number = 70
+agent - Step Result.Action = Opening door 2
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 80...
+b 0 [0.15 0.85]
+agent - Step Number = 80
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 2
+agent - Step Result.Reward = -1.0
+agent - Step Number = 80
+agent - Step Result.Action = Opening door 1
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 90...
+b 0 [0.85 0.15]
+agent - Step Number = 90
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 1
+agent - Step Result.Reward = -1.0
+agent - Step Number = 90
+agent - Step Result.Action = Opening door 2
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 100...
+b 0 [0.85 0.15]
+agent - Step Number = 100
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 1
+agent - Step Result.Reward = -1.0
+agent - Step Number = 100
+agent - Step Result.Action = Opening door 2
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = -20.0
+
+evaluating agent at epoch 110...
+b 0 [0.85 0.15]
+agent - Step Number = 110
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 1
+agent - Step Result.Reward = -1.0
+agent - Step Number = 110
+agent - Step Result.Action = Opening door 2
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 120...
+b 0 [0.15 0.85]
+agent - Step Number = 120
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 2
+agent - Step Result.Reward = -1.0
+agent - Step Number = 120
+agent - Step Result.Action = Opening door 1
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = -20.0
+
+evaluating agent at epoch 130...
+b 0 [0.85 0.15]
+agent - Step Number = 130
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 1
+agent - Step Result.Reward = -1.0
+agent - Step Number = 130
+agent - Step Result.Action = Opening door 2
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 140...
+b 0 [0.15 0.85]
+agent - Step Number = 140
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 2
+agent - Step Result.Reward = -1.0
+agent - Step Number = 140
+agent - Step Result.Action = Opening door 1
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 150...
+b 0 [0.15 0.85]
+agent - Step Number = 150
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 2
+agent - Step Result.Reward = -1.0
+agent - Step Number = 150
+agent - Step Result.Action = Opening door 1
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = -20.0
+
+evaluating agent at epoch 160...
+b 0 [0.15 0.85]
+agent - Step Number = 160
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 2
+agent - Step Result.Reward = -1.0
+agent - Step Number = 160
+agent - Step Result.Action = Opening door 1
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = -20.0
+
+evaluating agent at epoch 170...
+b 0 [0.85 0.15]
+agent - Step Number = 170
+agent - Step Result.Action = Listening
+agent - Step Result.Observation = Roaring is heard coming from door 1
+agent - Step Result.Reward = -1.0
+agent - Step Number = 170
+agent - Step Result.Action = Opening door 2
+agent - Step Result.Observation = No observation from entering a terminal state
+agent - Step Result.Reward = 10.0
+
+evaluating agent at epoch 180...
+b 0 [0.15 0.85]
+agent - Step Number = 180

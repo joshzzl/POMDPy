@@ -16,7 +16,12 @@ class TigerAction(DiscreteAction):
     def __init__(self, action_type):
         super(TigerAction, self).__init__(action_type)
         self.bin_number = action_type
-
+        '''
+        if isinstance(action_type, int):
+            print("Right format:" + str(action_type))
+        else:
+            print("Wrong format: " + str(action_type))
+        '''
     def copy(self):
         return TigerAction(self.bin_number)
 

@@ -33,7 +33,7 @@ class DiscreteState(Point):
         Returns a String of the state
         :return: String
         """
-
+    
     def __eq__(self, other_state_as_list):
         """
         By default simply checks for equivalency between the two state lists
@@ -44,6 +44,20 @@ class DiscreteState(Point):
             if i != j:
                 return 0
         return 1
+    '''
+    def __eq__(self, other_state_as_list):
+        """
+        By default simply checks for equivalency between the two state lists
+        """
+        if type(other_state_as_list) is list:
+            this_as_list = self.as_list()
+            for i,j in zip(this_as_list, other_state_as_list):
+                if i != j:
+                    return 0
+            return 1
+        else:
+            print(type(self), type(other_state_as_list))
+    '''
 
     def distance_to(self, other_state_as_list):
         """

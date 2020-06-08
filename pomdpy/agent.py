@@ -31,6 +31,7 @@ class Agent:
         self.action_pool = self.model.create_action_pool()
         self.observation_pool = self.model.create_observation_pool(self)
         self.solver_factory = solver.reset  # Factory method for generating instances of the solver
+        self.save_name = self.model.save_name
 
     def discounted_return(self):
 
@@ -66,20 +67,26 @@ class Agent:
                          '\t' + 'ave time/epoch: ' + str(self.experiment_results.time.mean))
 
     def multi_epoch_tf(self):
-        import tensorflow as tf
+        #import tensorflow as tf
+        import tensorflow.compat.v1 as tf
+        tf.disable_v2_behavior()
         tf.set_random_seed(int(self.model.seed) + 1)
 
         with tf.Session() as sess:
+        #with tf.InteractiveSession() as sess:
+            
+            #reset the solver
             solver = self.solver_factory(self, sess)
 
             for epoch in range(self.model.n_epochs + 1):
-
+                # reset the tiger gate -- start_scenario
                 self.model.reset_for_epoch()
 
+                # for testing epoch, evaluate and print
                 if epoch % self.model.test == 0:
                     epoch_start = time.time()
 
-                    print('evaluating agent at epoch {}...'.format(epoch))
+                    print("\nevaluating agent at epoch {}...".format(epoch))
 
                     # evaluate agent
                     reward = 0.
@@ -89,10 +96,12 @@ class Agent:
                     step = 0
                     while step < self.model.max_steps:
                         action, v_b = solver.greedy_predict(belief)
+                        #print("step: "+ str(step) + "; action: "+ str(action))
                         step_result = self.model.generate_step(action)
 
                         if not step_result.is_terminal:
                             belief = self.model.belief_update(belief, action, step_result.observation)
+                            print("b", step, belief)
 
                         reward += step_result.reward
                         discounted_reward += discount * step_result.reward
@@ -126,7 +135,8 @@ class Agent:
                     solver.train(epoch)
 
             if self.model.save:
-                solver.save_alpha_vectors()
+                #solver.save_alpha_vectors()
+                solver.save_alpha_vectors_name(self.save_name)
                 print('saved alpha vectors!')
 
     def multi_epoch(self):

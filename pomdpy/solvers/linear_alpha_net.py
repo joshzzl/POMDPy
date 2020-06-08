@@ -1,12 +1,13 @@
 from __future__ import absolute_import
 import os
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from experiments.scripts.pickle_wrapper import save_pkl, load_pkl
 from .ops import simple_linear, select_action_tf, clipped_error
 from .alpha_vector import AlphaVector
 from .base_tf_solver import BaseTFSolver
 
+tf.disable_v2_behavior()
 
 class LinearAlphaNet(BaseTFSolver):
     """
@@ -106,9 +107,11 @@ class LinearAlphaNet(BaseTFSolver):
                 self.ops['l0_in']: np.reshape(self.model.get_reward_matrix().flatten(), [1, 6]),
                 self.ops['belief']: belief,
                 self.ops['epsilon_step']: epsilon_step})
+        action = action.item()
 
         # e-greedy action selection
         if np.random.uniform(0, 1) < epsilon:
+            #print("Trigger random int gen")
             action = np.random.randint(self.model.num_actions)
 
         return action, v_b
@@ -119,6 +122,7 @@ class LinearAlphaNet(BaseTFSolver):
              feed_dict={
                  self.ops['l0_in']: np.reshape(self.model.get_reward_matrix().flatten(), [1, 6]),
                  self.ops['belief']: belief})
+        action = action.item()
         return action, v_b
 
     def gradients(self, target_v, belief, learning_rate_step):
@@ -141,6 +145,7 @@ class LinearAlphaNet(BaseTFSolver):
         return vector_set
 
     def build_linear_network(self):
+        #tf.reset_default_graph()
         with tf.variable_scope('linear_fa_prediction'):
             self.ops['belief'] = tf.placeholder('float32', [self.model.num_states], name='belief_input')
 
@@ -242,3 +247,10 @@ class LinearAlphaNet(BaseTFSolver):
 
         av = self.alpha_vectors()
         save_pkl(av, os.path.join(self.model.weight_dir, "linear_alpha_net_vectors.pkl"))
+
+    def save_alpha_vectors_name(self, name):
+        if not os.path.exists(self.model.weight_dir):
+            os.makedirs(self.model.weight_dir)
+
+        av = self.alpha_vectors()
+        save_pkl(av, os.path.join(self.model.weight_dir, name))

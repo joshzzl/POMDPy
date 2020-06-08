@@ -62,5 +62,11 @@ if __name__ == '__main__':
         env.draw_env()
         agent = Agent(env, solver)
         agent.discounted_return()
+    '''
+    elif args['env'] == 'Tiger':
+            env = TigerModel(args)
+            agent = Agent(env, solver)
+            agent.discounted_return()
+    '''
     else:
         print('Unknown env {}'.format(args['env']))

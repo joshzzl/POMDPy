@@ -44,6 +44,9 @@ class TigerState(DiscreteState):
         else:
             return 0
 
+    def equal_state(self, other_state):
+        pass
+
     def hash(self):
         pass
 

@@ -19,6 +19,10 @@ if __name__ == '__main__':
     parser.add_argument('--n_epochs', default=1, type=int, help='Num of epochs of the experiment to conduct')
     parser.add_argument('--max_steps', default=10, type=int, help='Max num of steps per trial/episode/trajectory/epoch')
     parser.add_argument('--save', dest='save', action='store_true', help='Pickle the weights/alpha vectors')
+    parser.add_argument('--save_name', default="linear_alpha_net_vectors.pkl", type=str, help='save name for alpha vector')
+    parser.add_argument('--k_type', default=None, type=str, help='type of deceptive kernel, default None')
+    parser.add_argument('--d_prob', default=0.85, type=float, help='value deceptive mask probability, only valid if d_kernel is prob')
+
 
     # Args for Deep Alpha Nets
     parser.add_argument('--learning_rate', default=0.05, type=float)
