@@ -1,10 +1,10 @@
 from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import division
-from builtins import str
-from builtins import map
-from builtins import hex
-from builtins import range
+#from builtins import str
+#from builtins import map
+#from builtins import hex
+#from builtins import range
 from past.utils import old_div
 import logging
 import json

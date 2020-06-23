@@ -1,4 +1,4 @@
-from builtins import object
+#from builtins import object
 from future.utils import with_metaclass
 import abc
 

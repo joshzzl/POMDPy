@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 from __future__ import division
-from builtins import range
+#from builtins import range
 from past.utils import old_div
 import time
 import numpy as np
