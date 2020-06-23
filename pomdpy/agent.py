@@ -2,13 +2,14 @@ from __future__ import print_function, division
 import time
 import logging
 import os
+import warnings
 from pomdpy.pomdp import Statistic
 from pomdpy.pomdp.history import Histories, HistoryEntry
 from pomdpy.util import console, print_divider
 from experiments.scripts.pickle_wrapper import save_pkl
 
 module = "agent"
-
+warnings.simplefilter('always', UserWarning)
 
 class Agent:
     """
@@ -25,6 +26,8 @@ class Agent:
         """
         self.logger = logging.getLogger('POMDPy.Solver')
         self.model = model
+        self.base_timeout = self.model.timeout
+        self.timeout = self.model.timeout
         self.results = Results()
         self.experiment_results = Results()
         self.histories = Histories()
@@ -152,10 +155,21 @@ class Agent:
                 eps = self.run_pomcp(i + 1, eps)
                 self.model.reset_for_epoch()
 
-            if self.experiment_results.time.running_total > self.model.timeout:
-                console(2, module, 'Timed out after ' + str(i) + ' epochs in ' +
-                        self.experiment_results.time.running_total + ' seconds')
+            if self.experiment_results.time.running_total > self.timeout:
+                self.timeout += self.base_timeout
+                #console(2, module, 'Timed out after ' + str(i) + ' epochs in ' + \
+                #        str(self.experiment_results.time.running_total) + ' seconds')
+                #raise RuntimeError("time out error!!")
+                warnings.warn('Time warning: {0:.2f}; epoch: {1:d}'\
+                    .format(self.experiment_results.time.running_total, i+1))
+                
+                #break
+            '''
+            if self.experiment_results.time.running_total > 120:
+                raise RuntimeWarning("timeout warning 120 " + str(i+1))
                 break
+            '''
+
 
     def run_pomcp(self, epoch, eps):
         epoch_start = time.time()

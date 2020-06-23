@@ -97,7 +97,7 @@ class PositionAndRockData(HistoricalData):
         next_data = self.deep_copy()
         next_position, is_legal = self.model.make_next_position(self.grid_position.copy(), rock_action.bin_number)
         next_data.grid_position = next_position
-
+        # if sample, this place becomes empty
         if rock_action.bin_number is ActionType.SAMPLE:
             rock_no = self.model.get_cell_type(self.grid_position)
             next_data.all_rock_data[rock_no].chance_good = 0.0

@@ -8,8 +8,11 @@ CONSOLE LOGGING VERBOSITY LEVELS
 4 - DEBUG
 """
 from __future__ import print_function
+#import warnings
 
 VERBOSITY = 3
+
+#warnings.simplefilter('always', UserWarning)
 
 
 def print_divider(size):
@@ -35,3 +38,7 @@ def console_no_print(verbosity_level, func):
     else:
         assert callable(func)
         func()
+'''
+def console_warn(module, msg):
+    warnings.warn(module + ' ' + msg)
+'''

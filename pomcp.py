@@ -5,6 +5,7 @@ from pomdpy.solvers import POMCP
 from pomdpy.log import init_logger
 from examples.rock_sample import RockModel
 import argparse
+import sys
 import numpy as np
 
 if __name__ == '__main__':
@@ -27,7 +28,7 @@ if __name__ == '__main__':
     parser.add_argument('--n_sims', default=500, type=int,
                         help='For POMCP, this is the num of MC sims to do at each belief node. '
                              'For SARSA, this is the number of rollouts to do per epoch')
-    parser.add_argument('--timeout', default=3600, type=int, help='Max num of sec the experiment should run before '
+    parser.add_argument('--timeout', default=1200, type=int, help='Max num of sec the experiment should run before '
                                                                   'timeout')
     parser.add_argument('--preferred_actions', dest='preferred_actions', action='store_true', help='For RockSample, '
                                                     'specify whether smart actions should be used')
@@ -41,6 +42,8 @@ if __name__ == '__main__':
     parser.add_argument('--max_depth', default=100, type=int, help='Max depth for a DFS of the belief search tree in '
                         'MCTS')
     parser.add_argument('--action_selection_timeout', default=60, type=int, help='Max num of secs for action selection')
+
+    parser.add_argument('--save_name', default="foo", type=str, help='not available temporarily')
 
     parser.set_defaults(preferred_actions=False)
     parser.set_defaults(use_tf=False)
@@ -62,11 +65,15 @@ if __name__ == '__main__':
         env.draw_env()
         agent = Agent(env, solver)
         agent.discounted_return()
-    '''
+    else:
+        print('Unknown env {}'.format(args['env']))
+
+    sys.exit(0)
+
+'''
     elif args['env'] == 'Tiger':
             env = TigerModel(args)
             agent = Agent(env, solver)
             agent.discounted_return()
-    '''
-    else:
-        print('Unknown env {}'.format(args['env']))
+'''
+    
