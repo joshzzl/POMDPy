@@ -1,0 +1,129 @@
+nohup: ignoring input
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 606.02; epoch: 14
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 1214.43; epoch: 24
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 1812.14; epoch: 32
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 2447.24; epoch: 42
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 3020.56; epoch: 49
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 3624.36; epoch: 56
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 4253.32; epoch: 65
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 4859.64; epoch: 73
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 5402.12; epoch: 80
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 6035.27; epoch: 88
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 6624.51; epoch: 96
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 7225.16; epoch: 104
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 7811.59; epoch: 112
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 8401.32; epoch: 121
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 9008.71; epoch: 129
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 9645.16; epoch: 136
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 10259.80; epoch: 144
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 10854.40; epoch: 152
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 11413.44; epoch: 161
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 12045.56; epoch: 170
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 12698.90; epoch: 177
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 13233.04; epoch: 183
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 13802.59; epoch: 190
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 14486.42; epoch: 198
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 15054.44; epoch: 205
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 15621.79; epoch: 213
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 16221.08; epoch: 220
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 16871.23; epoch: 229
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 17444.77; epoch: 235
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 18058.00; epoch: 242
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 18631.53; epoch: 249
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 19266.57; epoch: 258
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 19897.12; epoch: 267
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 20407.49; epoch: 273
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 21048.97; epoch: 280
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 21605.12; epoch: 287
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 22220.26; epoch: 295
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 22884.49; epoch: 303
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 23401.66; epoch: 310
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 24063.87; epoch: 319
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 24672.50; epoch: 327
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 25214.59; epoch: 333
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 25806.60; epoch: 342
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 26421.36; epoch: 351
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 27008.86; epoch: 357
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 27618.91; epoch: 365
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 28235.96; epoch: 373
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 28824.44; epoch: 380
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 29427.54; epoch: 387
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 30062.42; epoch: 396
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 30613.03; epoch: 404
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 31320.67; epoch: 411
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 31826.01; epoch: 417
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 32450.92; epoch: 424
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 33073.01; epoch: 433
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 33754.29; epoch: 441
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 34318.06; epoch: 447
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 34817.24; epoch: 454
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 35458.51; epoch: 462
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 36025.15; epoch: 470
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 36644.65; epoch: 477
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 37261.20; epoch: 484
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 37808.01; epoch: 491
+  .format(self.experiment_results.time.running_total, i+1))
+/root/zhili/code/POMDPy/pomdpy/agent.py:164: UserWarning: Time warning: 38417.97; epoch: 499
+  .format(self.experiment_results.time.running_total, i+1))
