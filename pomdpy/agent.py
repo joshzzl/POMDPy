@@ -174,7 +174,7 @@ class Agent:
     def run_pomcp(self, epoch, eps):
         epoch_start = time.time()
 
-        # Create a new solver
+        # Create a new solver - reset
         solver = self.solver_factory(self)
 
         # Monte-Carlo start state
