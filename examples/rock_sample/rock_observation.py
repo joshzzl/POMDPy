@@ -42,22 +42,24 @@ class RockObservation(DiscreteObservation):
         
         if self.is_empty:
             print("EMPTY"+suffix)
-        elif self.is_good == 1:
+        elif self.is_good:
             print("Good"+suffix)
-        elif self.is_good == 2:
+        elif not self.is_good:
             print("Bad"+suffix)
         else:
-            print(str(self.is_good)+suffix)
+            print("Weird-"+str(self.is_good)+suffix)
+
 
     def to_string(self):
         suffix = self.get_suffix()
 
         if self.is_empty:
             obs = "EMPTY"
-        elif self.is_good == 1:
+        elif self.is_good:
             obs = "Good"
-        elif self.is_good == 2:
+        elif not self.is_good:
             obs = "Bad"
         else:
-            obs = str(self.is_good)
+            obs = "Weird-"+str(self.is_good)
+
         return obs+suffix
