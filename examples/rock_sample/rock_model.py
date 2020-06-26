@@ -49,7 +49,7 @@ class RockModel(Model):
         self.exit_reward = self.rock_config['exit_reward']
         # The penalty for an illegal move.
         self.illegal_move_penalty = self.rock_config['illegal_move_penalty']
-        # penalty for finishing without sampling a rock
+        # the distance when check observation has 0.5 correctness; default 20.0
         self.half_efficiency_distance = self.rock_config['half_efficiency_distance']
 
         # ------------- Flags --------------- #
@@ -145,6 +145,8 @@ class RockModel(Model):
     def get_cell_type(self, pos):
         return self.env_map[pos.i][pos.j]
 
+    # return the correctness prob given the distance
+    # dist = 0, prob = 1; dist = +inf, prob = 0.5
     def get_sensor_correctness_probability(self, distance):
         assert self.half_efficiency_distance is not 0, self.logger.warning("Tried to divide by 0! Naughty naughty!")
         return (1 + np.power(2.0, old_div(-distance, self.half_efficiency_distance))) * 0.5
@@ -292,6 +294,7 @@ class RockModel(Model):
         :return: Return a list of all actions along with the length
         """
         all_actions = []
+        # include good or bad rocks
         for code in range(0, 5 + self.n_rocks):
             all_actions.append(RockAction(code))
         return all_actions
@@ -367,7 +370,14 @@ class RockModel(Model):
 
         return RockState(next_position, next_state_rock_states), True
 
-    def make_observation(self, action, next_state):
+    # modify to allow deceptive kernel - kernel type, and value
+    '''
+        Deceptive kernel type:
+            prob: further lower the correct probability, apply to binomial method
+            oppo: gives opposite result for each check-i action
+            rand: equivalent to  "dist = +inf" case
+    '''
+    def make_observation(self, action, next_state, k_type, truth_filter=None):
         # generate new observation if not checking or sampling a rock
         if action.bin_number < ActionType.SAMPLE:
             # Defaults to empty cell and Bad Rock
@@ -379,13 +389,17 @@ class RockModel(Model):
             obs = RockObservation(False, False)
             return obs
 
+        # if the action is check [5, 5+rock_no-1]
         # Already sampled this Rock so it is NO GOOD
+        # unique_rocks_sampled stores sampled rocks, ex. [1, 4, 5, 2]
         if action.rock_no in self.unique_rocks_sampled:
             return RockObservation(False, False)
 
+        # observation = 2^rock_no * (1/0) -- check_rock_no -- either 0 or 2^rock_no
         observation = self.actual_rock_states[action.rock_no]
 
         # if checking a rock...
+        # check the distance to that rock
         dist = next_state.position.euclidean_distance(self.rock_positions[action.rock_no])
 
         # NOISY OBSERVATION
@@ -394,6 +408,25 @@ class RockModel(Model):
         # chance of being True. If distance is 0, correct has a 100% chance of being True.
         correct = np.random.binomial(1.0, self.get_sensor_correctness_probability(dist))
 
+        mask = True
+        if k_type == 'prob':
+            mask = np.random.binomial(1.0, truth_filter)
+        elif k_type == 'oppo':
+            mask = False
+
+        correct = correct and mask
+        
+        # new_obs have 50/50 chance to be correct
+        # is_falsified = not correct
+        # is_deceived = not mask
+        if k_type == 'rand':
+            new_obs = np.random.binomial(1.0, 0.5)
+            mask = (new_obs == correct)
+            correct = new_obs
+
+        # if obs = 2^k, now obs = False
+        # if obs = 0, now obs = True
+        # correct = 0/False means we need to switch observation
         if not correct:
             # Return the incorrect state if the sensors malfunctioned
             observation = not observation
@@ -409,7 +442,8 @@ class RockModel(Model):
         if observation > 1:
             observation = True
 
-        return RockObservation(observation, False)
+        # RockObs(_, _, is_falsified, is_deceived)
+        return RockObservation(observation, False, (not correct), (not mask))
 
     def belief_update(self, old_belief, action, observation):
         pass
@@ -458,7 +492,7 @@ class RockModel(Model):
         result = StepResult()
         result.next_state, is_legal = self.make_next_state(state, action)
         result.action = action.copy()
-        result.observation = self.make_observation(action, result.next_state)
+        result.observation = self.make_observation(action, result.next_state, self.k_type, self.truth_filter)
         result.reward = self.make_reward(state, action, result.next_state, is_legal)
         result.is_terminal = self.is_terminal(result.next_state)
 

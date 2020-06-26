@@ -11,6 +11,7 @@ def ucb_action(mcts, current_node, greedy):
     N = mapping.total_visit_count
     log_n = np.log(N + 1)
 
+    # belief node -> action_mapping ->  entries
     actions = list(mapping.entries.values())
     random.shuffle(actions)
     for action_entry in actions:

@@ -82,6 +82,7 @@ class HistorySequence(object):
     def remove_entry(self, history_entry):
         del self.entry_sequence[history_entry.id]
 
+    # modify check action print style to "check i"
     def show(self):
         print_divider("medium")
         print("\tDisplaying history sequence")

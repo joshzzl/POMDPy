@@ -43,6 +43,10 @@ if __name__ == '__main__':
                         'MCTS')
     parser.add_argument('--action_selection_timeout', default=60, type=int, help='Max num of secs for action selection')
 
+    # arguments for deceptive mask
+    parser.add_argument('--k_type', default=None, type=str, help='Deceptive kernel type')
+    parser.add_argument('--truth_filter', default=1.0, type=float, help='filter applied when kernel type is prob')
+
     parser.add_argument('--save_name', default="foo", type=str, help='not available temporarily')
 
     parser.set_defaults(preferred_actions=False)
