@@ -1,0 +1,10 @@
+/Users/fantaaaa/Desktop/POMDPy-master/pomdpy/agent.py:164: UserWarning: Time warning: 1213.20; epoch: 36
+  .format(self.experiment_results.time.running_total, i+1))
+/Users/fantaaaa/Desktop/POMDPy-master/pomdpy/agent.py:164: UserWarning: Time warning: 2422.62; epoch: 77
+  .format(self.experiment_results.time.running_total, i+1))
+/Users/fantaaaa/Desktop/POMDPy-master/pomdpy/agent.py:164: UserWarning: Time warning: 3600.38; epoch: 114
+  .format(self.experiment_results.time.running_total, i+1))
+/Users/fantaaaa/Desktop/POMDPy-master/pomdpy/agent.py:164: UserWarning: Time warning: 4802.74; epoch: 154
+  .format(self.experiment_results.time.running_total, i+1))
+/Users/fantaaaa/Desktop/POMDPy-master/pomdpy/agent.py:164: UserWarning: Time warning: 6025.15; epoch: 197
+  .format(self.experiment_results.time.running_total, i+1))
